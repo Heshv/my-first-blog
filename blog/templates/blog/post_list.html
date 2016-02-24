@@ -1,10 +1,23 @@
-<html>
+<html xmlns:style="http://www.w3.org/1999/xhtml">
 <head>
 
 </head>
 <body>
+<div>
+    Hello World! This is my first Django app!
+</div>
 
-Hello World!
+
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date}}</p>
+        <div style="float:left"><h2><a href="">{{post.title}}</a></h2></div>
+        <div style="float:left;clear:right"><h5>(published: {{ post.published_date}})</h5></div>
+        <hr style="clear:both">
+        <p>{{post.text|linebreaks }}</p>
+    </div>
+
+{% endfor %}
 
 </body>
 
